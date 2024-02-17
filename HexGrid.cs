@@ -16,12 +16,12 @@ public class HexGrid : MonoBehaviour
         {
             for(int x=0; x<Width; x++)
             {
-                Vector3 centerPosition = HexMetric.Center(HexSize, x, z, Orientation) + transform.position;
-                for(int s=0; s<HexMetric.Corners(HexSize,Orientation).Length; s++)
+                Vector3 centerPosition = HexMetrix.Center(HexSize, x, z, Orientation) + transform.position;
+                for(int s=0; s<HexMetrix.Corners(HexSize, Orientation).Length; s++)
                 {
                     Gizmos.DrawLine(
-                        centerPosition+HexMetric.Corners(HexSize, Orientation)[s%6],
-                        centerPosition+HexMetric.Corners(HexSize, Orientation)[(s+1)%6]
+                        centerPosition + HexMetrix.Corners(HexSize, Orientation)[s%6],
+                        centerPosition + HexMetrix.Corners(HexSize, Orientation)[(s+1)%6]
                     );
                 }
             }
